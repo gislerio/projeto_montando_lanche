@@ -47,7 +47,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" v-if="etapa == 1">
                     <!-- Tipo do pão -->
                     <div class="row mt-2">
                         <div class="col">
@@ -75,7 +75,8 @@
                                 <div class="card-header">Saladas</div>
                                 <div class="card-body">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="alface">
+                                        <input class="form-check-input" type="checkbox" value="alface" id="alface"
+                                            v-model="inputSaladas">
                                         <label class="form-check-label" for="alface">Alface</label>
                                     </div>
                                 </div>
@@ -89,15 +90,18 @@
                                 <div class="card-header">Molhos</div>
                                 <div class="card-body">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" value="" id="ketchup">
+                                        <input class="form-check-input" type="checkbox" value="ketchup" id="ketchup"
+                                            v-model="inputMolhos">
                                         <label class="form-check-label" for="ketchup">Ketchup</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" value="" id="mostarda">
+                                        <input class="form-check-input" type="checkbox" value="mostarda" id="mostarda"
+                                            v-model="inputMolhos">
                                         <label class="form-check-label" for="mostarda">Mostarda</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" value="" id="maionese">
+                                        <input class="form-check-input" type="checkbox" value="maionese" id="maionese"
+                                            v-model="inputMolhos">
                                         <label class="form-check-label" for="maionese">Maionese</label>
                                     </div>
                                 </div>
@@ -111,20 +115,54 @@
                                 <div class="card-header">Tipo Hambúrguer</div>
                                 <div class="card-body">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="bovino" id="bovino">
+                                        <input class="form-check-input" type="radio" name="bovino" id="bovino"
+                                            value="bovino" v-model="inputHamburguer">
                                         <label class="form-check-label" for="bovino">Bovino</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="frango" id="frango">
+                                        <input class="form-check-input" type="radio" name="frango" id="frango"
+                                            value="frango" v-model="inputHamburguer">
                                         <label class="form-check-label" for="frango">Frango</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="soja" id="soja">
+                                        <input class="form-check-input" type="radio" name="soja" id="soja" value="soja"
+                                            v-model="inputHamburguer">
                                         <label class="form-check-label" for="soja">Soja</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col d-flex justify-content-end">
+                            <button type="button" class="btn btn-primary" @click="fazerPedido()">Fazer pedido</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" v-if="etapa === 2">
+                    <div class="row mt-2">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">Informe seus dados</div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label for="" class="form-label">Nome</label>
+                                        <input type="text" class="form-control" v-model="inputNome">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="" class="form-label">Endereço</label>
+                                        <input type="text" class="form-control" v-model="inputEndereco">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col d-flex justify-content-between">
+                            <button type="button" class="btn btn-warning" @click="etapa -= 1">Voltar</button>
+                            <button type="button" class="btn btn-success">Confirmar</button>
+                        </div>
+
                     </div>
                 </div>
             </div>
