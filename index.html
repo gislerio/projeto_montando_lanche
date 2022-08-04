@@ -8,9 +8,8 @@
     <title>Montando o Lanche</title>
 
     <!-- VUE -->
-    <script src="./js/vue.js"></script>
-
-    <script src="./js/padrao.js"></script>
+    
+       
 
     <!-- BOOTSTRAP -->
     <!-- CSS only -->
@@ -36,7 +35,17 @@
         <div id="app">
             <div class="row">
                 <div class="col-md-6">
-                    Imagens do lanche
+                    <div class="row mt-2">
+                        <div class="col">
+                            <img :src="pao[0]">
+                            <img :src="alface">
+                            <img :src="ketchup">
+                            <img :src="Mostarda">
+                            <img :src="Maionese">
+                            <img :src="hamburguer">
+                            <img :src="pao[1]">
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-6">
                     <!-- Tipo do pão -->
@@ -121,7 +130,8 @@
         </div>
 
     </div>
+    <script src="./js/vue.js"></script>
+    <script src="./js/padrao.js"></script> 
 
 </body>
-
 </html>
