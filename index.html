@@ -8,8 +8,8 @@
     <title>Montando o Lanche</title>
 
     <!-- VUE -->
-    
-       
+
+
 
     <!-- BOOTSTRAP -->
     <!-- CSS only -->
@@ -55,12 +55,13 @@
                                 <div class="card-header">Tipo do Pão</div>
                                 <div class="card-body">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="gergilim" id="gergilim">
-                                        <label class="form-check-label" for="gergilim">Gergilim</label>
+                                        <input class="form-check-input" type="radio" name="gergelim" id="gergelim"
+                                            value="gergelim" v-model="inputTipoPao">
+                                        <label class="form-check-label" for="gergelim">Gergelim</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="australiano"
-                                            id="australiano">
+                                        <input class="form-check-input" type="radio" name="australiano" id="australiano"
+                                            value="australiano" v-model="inputTipoPao">
                                         <label class="form-check-label" for="australiano">Australiano</label>
                                     </div>
                                 </div>
@@ -131,7 +132,8 @@
 
     </div>
     <script src="./js/vue.js"></script>
-    <script src="./js/padrao.js"></script> 
+    <script src="./js/padrao.js"></script>
 
 </body>
+
 </html>
