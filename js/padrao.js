@@ -7,7 +7,8 @@ const vm = new Vue({
         inputHamburguer: '',
         etapa: 1,
         inputNome: '',
-        inputEndereco: ''
+        inputEndereco: '',
+        novoPedidoAssincrono: null
     },
     computed: {
         pao() {
@@ -64,7 +65,33 @@ const vm = new Vue({
             } else {
                 alert('Você precisa selecionar um pão e um hamburguer')
             }
+        },
+        confirmarPedido() {
+            if (this.inputNome && this.inputEndereco) {
+                this.etapa = 3;
+                this.novoPedidoAssincrono = setTimeout(() => this.novoPedido(), 7000);
+            } else {
+                alert('Informe o nome e endereço');
+            }
+        },
+        novoPedido() {
+            this.etapa = 1
+
+            this.inputTipoPao = ''
+            this.inputSaladas = []
+            this.inputMolhos = []
+            this.inputHamburguer = ''
+            this.inputNome = ''
+            this.inputEndereco = ''
         }
+    },
+    watch: {
+        etapa(novoValor) {
+            if (novoValor == 1) {
+                clearTimeout(this.novoPedidoAssincrono);                
+            }
+        }
+
     },
 
 });

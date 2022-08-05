@@ -160,7 +160,27 @@
                     <div class="row mt-2">
                         <div class="col d-flex justify-content-between">
                             <button type="button" class="btn btn-warning" @click="etapa -= 1">Voltar</button>
-                            <button type="button" class="btn btn-success">Confirmar</button>
+                            <button type="button" class="btn btn-success " @click="confirmarPedido()">Confirmar</button>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-6" v-if="etapa === 3">
+                    <div class="row mt-2">
+                        <div class="col">
+                            <div class="card">
+                                <div class="card-header">Pedido Confirmado</div>
+                                <div class="card-body">
+                                    <p>Agora é só aguardar 10 minutos</p>
+                                    <p>Vamos chamar você em breve</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col d-flex justify-content-between">
+                            <button type="button" class="btn btn-primary" @click="etapa = 1">Repetir pedido</button>
+                            <button type="button" class="btn btn-success" @click="novoPedido()">Novo pedido</button>
                         </div>
 
                     </div>
